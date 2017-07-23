@@ -12,7 +12,7 @@ import styles from '../CareList/styles.js'
 
 const Title = (props) => {
   return (
-    <Text>
+    <Text style={styles.title}>
       {props.title}
     </Text>
   );
@@ -26,24 +26,27 @@ const CardImage = (props) => {
 
 const CardValue = (props) => {
   return(
-    <Text>
+  <View style={styles.valueArea}>
+    <Text style={styles.value}>
       {props.value}
     </Text>
+  </View>
   )
 }
 
 const CardDate = (props) => {
   return(
     <Text>
-      Last updated {props.date}
+      Last updated {props.date}                               Past Data
     </Text>
   )
 }
 
 const TotalCard = (props) => {
   return(
-    <View style={styles.card}>
-    <Title title= {props.title} />
+    <View style={props.styles.card}>
+    <Title
+      title= {props.title} />
     <CardImage image= {props.image} />
     <CardValue value = {props.value} />
     <CardDate date= {props.date} />
@@ -57,7 +60,9 @@ export default class HealthCard extends Component {
       <ScrollView
             automaticallyAdjustContentInsets={false}
           >
+          <View style = {styles.container} >
             <TotalCard
+              styles = {{card: [styles.card,{backgroundColor:"#2ccce4"}]}}
               title = "Mindfull Eating"
               image = 'https://png.icons8.com/vegan-food/win10/86'
               value = "33 meals"
@@ -65,25 +70,29 @@ export default class HealthCard extends Component {
             />
 
             <TotalCard
+              styles = {{card: [styles.card, {backgroundColor:"#dce775"}]}}
               title = "Mood"
               image = "https://png.icons8.com/mental-state/win10/86"
-              value = "33 meals"
+              value = "Happy"
               date = "9/3/17"
             />
 
             <TotalCard
+              styles = {{card: [styles.card, {backgroundColor:"#ba68c8"}]}}
               title = "Weight"
               image = "https://png.icons8.com/scale/win10/86"
-              value = "33 meals"
+              value = "165 Pounds"
               date = "9/3/17"
             />
 
             <TotalCard
+              styles = {{card: [styles.card, {backgroundColor:"#37d67a"}]}}
               title = "Blood Pressure"
               image = "https://png.icons8.com/heart-health/win10/86"
-              value = "33 meals"
+              value = "120/80"
               date = "9/3/17"
             />
+        </View>
     </ScrollView>
     );
   }
