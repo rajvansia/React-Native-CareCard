@@ -11,8 +11,12 @@ export const styles = StyleSheet.create({
     marginRight: 20,
 
 },
-blueCard: {
-  backgroundColor: 'blue'
+card: {
+  backgroundColor: 'blue',
+  padding: 20,
+  borderColor: 'black',
+  borderWidth: 2,
+  margin: 10
 },
 image: {
   width: 69,
