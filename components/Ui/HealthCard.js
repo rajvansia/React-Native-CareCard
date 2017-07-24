@@ -26,7 +26,7 @@ const CardImage = (props) => {
 
 const CardValue = (props) => {
   return(
-  <View style={styles.valueArea}>
+  <View >
     <Text style={styles.value}>
       {props.value}
     </Text>
@@ -36,9 +36,11 @@ const CardValue = (props) => {
 
 const CardDate = (props) => {
   return(
-    <Text>
-      Last updated {props.date}                               Past Data
+    <View style={styles.dateTop}>
+    <Text style={styles.date}>
+      Last updated {props.date}                           Past Data
     </Text>
+  </View>
   )
 }
 
@@ -47,8 +49,10 @@ const TotalCard = (props) => {
     <View style={props.styles.card}>
     <Title
       title= {props.title} />
+    <View style={styles.imageValue}>
     <CardImage image= {props.image} />
     <CardValue value = {props.value} />
+    </View>
     <CardDate date= {props.date} />
     </View>
   )
@@ -92,6 +96,7 @@ export default class HealthCard extends Component {
               value = "120/80"
               date = "9/3/17"
             />
+
         </View>
     </ScrollView>
     );

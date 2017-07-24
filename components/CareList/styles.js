@@ -12,23 +12,21 @@ export const styles = StyleSheet.create({
 //
 // },
   card: {
-    padding: 20,
     borderColor: 'black',
     borderWidth: 2,
-    margin: 10,
+    margin: 20,
     borderBottomColor: 'black',
     borderBottomWidth: 5,
   },
 
-  valueArea: {
+  dateTop: {
     borderBottomColor: 'black',
-    borderBottomWidth: 2,
+    borderTopWidth: 2,
   },
 
   image: {
     width: 69,
     height: 69,
-    justifyContent:"center",
 
 },
   container: {
@@ -39,13 +37,29 @@ export const styles = StyleSheet.create({
   },
   title: {
     fontSize: 30,
-    paddingBottom: 10
+    paddingBottom: 10,
+    padding: 20
   },
+
+  date: {
+    paddingLeft: 20
+
+  },
+
+imageValue: {
+    paddingLeft: 20,
+    flex: 1,
+    flexDirection: "row",
+    paddingBottom: 10
+},
+
   value: {
     fontSize: 25,
-    paddingBottom: 20,
     alignItems:"center",
     justifyContent:"center",
+    paddingBottom: 20,
+    marginTop: 20,
+    marginLeft: 6
 
   },
 });
